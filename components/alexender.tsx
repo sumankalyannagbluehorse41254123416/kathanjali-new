@@ -213,10 +213,10 @@ export default function Alexander() {
         </div>
 
         {/* REACTIONS */}
-        <div className="p-4">
+        <div className="px-4">
 
           {/* STATS */}
-          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b">
+          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount} likes</div>
             <div>{comments.length} comments</div>
           </div>
@@ -364,7 +364,7 @@ export default function Alexander() {
           )}
 
           {/* COMMENTS LIST */}
-          <div className="mt-6 space-y-5">
+          <div className="mb-2.5">
             {comments.map((comment) => (
               <div key={comment.id} className="flex gap-3">
 

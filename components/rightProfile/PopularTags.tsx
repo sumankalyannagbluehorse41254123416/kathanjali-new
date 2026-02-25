@@ -2,7 +2,7 @@
 
 export default function PopularTags() {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6 max-w-md mt-8">
+    <div className="bg-white rounded-lg border border-gray-200 p-6 md:w-90 mt-8">
       <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-3">
         <i className="fa-solid fa-tag text-slate-500"></i>
         Popular Tags

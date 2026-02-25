@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function SocialMediaCard() {
   return (
-    <div className="bg-white rounded-lg p-6 w-90 border border-gray-200 mt-8">
+    <div className="bg-white rounded-lg p-6 md:w-90 border border-gray-200 mt-8">
       {/* Header */}
       <div className="mb-2">
         <h2 className="text-xl font-semibold text-gray-800">Connect</h2>

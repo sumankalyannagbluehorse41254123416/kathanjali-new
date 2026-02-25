@@ -26,7 +26,7 @@ export default function ContactCard() {
         {/* Address */}
         <div className="flex items-start mb-6">
           <svg
-            className="w-5 h-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0"
+            className="w-5 h-5 text-gray-800 mr-3 mt-0.5 flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

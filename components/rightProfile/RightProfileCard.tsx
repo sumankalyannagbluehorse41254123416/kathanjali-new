@@ -4,32 +4,35 @@ import Image from "next/image";
 
 export default function RightProfileCard() {
   return (
-    <div className=" rounded-lg w-90 bg-white">
+    <div className="w-full max-w-sm mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
 
-      <div className="w-full h-auto relative">
-
-        {/* IMAGE */}
+      {/* IMAGE SECTION */}
+      <div className="relative w-full">
         <Image
-          src="/images/vineet.jpg" // <-- Change path if needed
+          src="/images/vineet.jpg"
           alt="Vineet Agarwala"
-          width={320}
-          height={252}
-          className="w-full h-[252px] object-cover rounded-md"
+          width={400}
+          height={300}
+          className="w-full h-[252px] object-cover"
         />
 
-        {/* GREEN ONLINE DOT */}
-        <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-[140px] right-9 border-2 border-white"></div>
+        {/* GREEN ONLINE DOT (optional) */}
+        <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-4 right-6 border-2 border-white hidden"></div>
+      </div>
 
-        {/* BLUE NAME CARD */}
-        <div className="bg-[#1e40af] text-2xl text-white text-center p-6">
-          <h3 className="font-semibold">Vineet Agarwala</h3>
-          <p className="text-[14px] pt-4">
-            Techie. Storyteller. Founder.
-          </p>
-        </div>
+      {/* BLUE NAME SECTION */}
+      <div className="bg-[#1e40af] text-white flex flex-col items-center justify-center text-center px-6 py-6">
+        
+        <h3 className="text-2xl font-semibold">
+          Vineet Agarwala
+        </h3>
+
+        <p className="text-[14px] mt-2">
+          Techie. Storyteller. Founder.
+        </p>
 
       </div>
-      
+
     </div>
   );
 }

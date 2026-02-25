@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  ThumbsUp, MessageCircle, Send, MoreHorizontal, Bookmark, Link2, Code 
+import {
+  ThumbsUp, MessageCircle, Send, MoreHorizontal, Bookmark, Link2, Code
 } from "lucide-react";
 import Link from "next/link";
 import Postheader from "./Postheader";
@@ -27,164 +27,164 @@ type CommentType = {
 export default function Theman() {
 
 
-    /* ---------- POST STATE ---------- */
-  
-    const [liked, setLiked] = useState(false);
-    const [likeCount, setLikeCount] = useState(523);
-  
-    const [showCommentBox, setShowCommentBox] = useState(false);
-    const [commentInput, setCommentInput] = useState("");
-  
-    const [comments, setComments] = useState<CommentType[]>([]);
-  
-  
-    // Send popup state
-    const [showSendPopup, setShowSendPopup] = useState(false);
-  
-    /* ================= POST LIKE ================= */
-  
-    const handlePostLike = () => {
-      setLiked(!liked);
-      setLikeCount((prev) => (liked ? prev - 1 : prev + 1));
+  /* ---------- POST STATE ---------- */
+
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(523);
+
+  const [showCommentBox, setShowCommentBox] = useState(false);
+  const [commentInput, setCommentInput] = useState("");
+
+  const [comments, setComments] = useState<CommentType[]>([]);
+
+
+  // Send popup state
+  const [showSendPopup, setShowSendPopup] = useState(false);
+
+  /* ================= POST LIKE ================= */
+
+  const handlePostLike = () => {
+    setLiked(!liked);
+    setLikeCount((prev) => (liked ? prev - 1 : prev + 1));
+  };
+
+  /* ================= ADD COMMENT ================= */
+
+  const handleCommentSubmit = () => {
+    if (!commentInput.trim()) return;
+
+    const newComment: CommentType = {
+      id: Date.now(),
+      text: commentInput,
+      likes: 0,
+      liked: false,
+      showReplyBox: false,
+      replies: [],
     };
-  
-    /* ================= ADD COMMENT ================= */
-  
-    const handleCommentSubmit = () => {
-      if (!commentInput.trim()) return;
-  
-      const newComment: CommentType = {
-        id: Date.now(),
-        text: commentInput,
-        likes: 0,
-        liked: false,
-        showReplyBox: false,
-        replies: [],
-      };
-  
-      setComments((prev) => [...prev, newComment]);
-      setCommentInput("");
-      setShowCommentBox(false);
-    };
-  
-    /* ================= COMMENT LIKE ================= */
-  
-    const handleCommentLike = (commentId: number) => {
-      setComments((prev) =>
-        prev.map((comment) =>
-          comment.id === commentId
-            ? {
-              ...comment,
-              liked: !comment.liked,
-              likes: comment.liked
-                ? comment.likes - 1
-                : comment.likes + 1,
-            }
-            : comment
-        )
-      );
-    };
-  
-    /* ================= TOGGLE REPLY BOX ================= */
-  
-    const toggleReplyBox = (commentId: number) => {
-      setComments((prev) =>
-        prev.map((comment) =>
-          comment.id === commentId
-            ? { ...comment, showReplyBox: !comment.showReplyBox }
-            : comment
-        )
-      );
-    };
-  
-    /* ================= ADD REPLY ================= */
-  
-    const handleReplySubmit = (commentId: number, replyText: string) => {
-      if (!replyText.trim()) return;
-  
-      setComments((prev) =>
-        prev.map((comment) =>
-          comment.id === commentId
-            ? {
-              ...comment,
-              replies: [
-                ...comment.replies,
-                {
-                  id: Date.now(),
-                  text: replyText,
-                  likes: 0,
-                  liked: false,
-                },
-              ],
-              showReplyBox: false,
-            }
-            : comment
-        )
-      );
-    };
-  
-    /* ================= REPLY LIKE ================= */
-  
-    const handleReplyLike = (commentId: number, replyId: number) => {
-      setComments((prev) =>
-        prev.map((comment) =>
-          comment.id === commentId
-            ? {
-              ...comment,
-              replies: comment.replies.map((reply) =>
-                reply.id === replyId
-                  ? {
-                    ...reply,
-                    liked: !reply.liked,
-                    likes: reply.liked
-                      ? reply.likes - 1
-                      : reply.likes + 1,
-                  }
-                  : reply
-              ),
-            }
-            : comment
-        )
-      );
-    };
-  
-    /* ================= REPLY COMPONENT ================= */
-  
-    const ReplyBox = ({
-      onSubmit,
-    }: {
-      onSubmit: (text: string) => void;
-    }) => {
-      const [replyText, setReplyText] = useState("");
-  
-      return (
-        <div className="mt-2 flex gap-2">
-          <input
-            type="text"
-            value={replyText}
-            onChange={(e) => setReplyText(e.target.value)}
-            placeholder="Write a reply..."
-            className="flex-1 border rounded-lg px-3 py-1 text-sm"
-          />
-          <button
-            onClick={() => {
-              onSubmit(replyText);
-              setReplyText("");
-            }}
-            className="bg-blue-600 text-white px-3 rounded-lg text-sm"
-          >
-            Post
-          </button>
-        </div>
-      );
-    };
+
+    setComments((prev) => [...prev, newComment]);
+    setCommentInput("");
+    setShowCommentBox(false);
+  };
+
+  /* ================= COMMENT LIKE ================= */
+
+  const handleCommentLike = (commentId: number) => {
+    setComments((prev) =>
+      prev.map((comment) =>
+        comment.id === commentId
+          ? {
+            ...comment,
+            liked: !comment.liked,
+            likes: comment.liked
+              ? comment.likes - 1
+              : comment.likes + 1,
+          }
+          : comment
+      )
+    );
+  };
+
+  /* ================= TOGGLE REPLY BOX ================= */
+
+  const toggleReplyBox = (commentId: number) => {
+    setComments((prev) =>
+      prev.map((comment) =>
+        comment.id === commentId
+          ? { ...comment, showReplyBox: !comment.showReplyBox }
+          : comment
+      )
+    );
+  };
+
+  /* ================= ADD REPLY ================= */
+
+  const handleReplySubmit = (commentId: number, replyText: string) => {
+    if (!replyText.trim()) return;
+
+    setComments((prev) =>
+      prev.map((comment) =>
+        comment.id === commentId
+          ? {
+            ...comment,
+            replies: [
+              ...comment.replies,
+              {
+                id: Date.now(),
+                text: replyText,
+                likes: 0,
+                liked: false,
+              },
+            ],
+            showReplyBox: false,
+          }
+          : comment
+      )
+    );
+  };
+
+  /* ================= REPLY LIKE ================= */
+
+  const handleReplyLike = (commentId: number, replyId: number) => {
+    setComments((prev) =>
+      prev.map((comment) =>
+        comment.id === commentId
+          ? {
+            ...comment,
+            replies: comment.replies.map((reply) =>
+              reply.id === replyId
+                ? {
+                  ...reply,
+                  liked: !reply.liked,
+                  likes: reply.liked
+                    ? reply.likes - 1
+                    : reply.likes + 1,
+                }
+                : reply
+            ),
+          }
+          : comment
+      )
+    );
+  };
+
+  /* ================= REPLY COMPONENT ================= */
+
+  const ReplyBox = ({
+    onSubmit,
+  }: {
+    onSubmit: (text: string) => void;
+  }) => {
+    const [replyText, setReplyText] = useState("");
+
+    return (
+      <div className="mt-2 flex gap-2">
+        <input
+          type="text"
+          value={replyText}
+          onChange={(e) => setReplyText(e.target.value)}
+          placeholder="Write a reply..."
+          className="flex-1 border rounded-lg px-3 py-1 text-sm"
+        />
+        <button
+          onClick={() => {
+            onSubmit(replyText);
+            setReplyText("");
+          }}
+          className="bg-blue-600 text-white px-3 rounded-lg text-sm"
+        >
+          Post
+        </button>
+      </div>
+    );
+  };
 
   return (
     <div className="max-w-2xl  mt-8">
       <div className="bg-white rounded-lg shadow overflow-hidden">
 
         {/* HEADER */}
-            <Postheader/>
+        <Postheader />
 
         {/* IMAGE */}
         <div className="mt-3 relative">
@@ -200,8 +200,8 @@ export default function Theman() {
         {/* CONTENT */}
         <div className="p-4">
           <p className="text-base text-gray-900 leading-relaxed mb-2">
-✨ Once upon a time, in South India, there lived a man with a restless ambition. He was not content with wealth, family, or even the respect he enjoyed in his town. He wanted something far greater—supernatural powers.          </p>
-          
+            ✨ Once upon a time, in South India, there lived a man with a restless ambition. He was not content with wealth, family, or even the respect he enjoyed in his town. He wanted something far greater—supernatural powers.          </p>
+
           <Link
             href="/themanpost"
             className="text-[15px] text-blue-600 font-medium inline-flex items-center gap-1 group"
@@ -211,46 +211,49 @@ export default function Theman() {
             </span>
           </Link>
         </div>
-{/* REACTIONS */}
-        <div className="p-4">
+        {/* REACTIONS */}
+        <div className="px-4">
 
           {/* STATS */}
-          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b">
+          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount} likes</div>
             <div>{comments.length} comments</div>
           </div>
 
           {/* ACTION BUTTONS */}
-          <div className="flex justify-between mt-2">
+          <div className="flex justify-between mt-2 mb-2.5">
 
-            {/* LIKE */}
-            <button
-              onClick={handlePostLike}
-              className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
-            >
-              <ThumbsUp className={liked ? "text-blue-600" : ""} />
-              <span>Like</span>
-            </button>
+  {/* LIKE */}
+  <button
+    onClick={handlePostLike}
+    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
+  >
+    <ThumbsUp
+      size={18}
+      className={liked ? "text-blue-600" : ""}
+    />
+    <span>Like</span>
+  </button>
 
-            {/* COMMENT */}
-            <button
-              onClick={() => setShowCommentBox(!showCommentBox)}
-              className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
-            >
-              <MessageCircle />
-              <span>Comment</span>
-            </button>
+  {/* COMMENT */}
+  <button
+    onClick={() => setShowCommentBox(!showCommentBox)}
+    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
+  >
+    <MessageCircle size={18} />
+    <span>Comment</span>
+  </button>
 
-            {/* SEND */}
-            <button
-              onClick={() => setShowSendPopup(true)}
-              className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
-            >
-              <i className="fa-regular fa-paper-plane"></i>
-              <span className="text-sm">Send</span>
-            </button>
+  {/* SEND */}
+  <button
+    onClick={() => setShowSendPopup(true)}
+    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
+  >
+    <i className="fa-regular fa-paper-plane text-[18px]"></i>
+    <span>Send</span>
+  </button>
 
-          </div>
+</div>
 
 
 
@@ -363,7 +366,7 @@ export default function Theman() {
           )}
 
           {/* COMMENTS LIST */}
-          <div className="mt-6 space-y-5">
+          <div className="mb-2.5">
             {comments.map((comment) => (
               <div key={comment.id} className="flex gap-3">
 
@@ -444,7 +447,7 @@ export default function Theman() {
           </div>
 
         </div>
-        
+
 
       </div>
     </div>

@@ -453,41 +453,48 @@ export default function Barbarikpost() {
 
                         {/* ---------------- REACTIONS ROW ---------------- */}
                         {/* REACTIONS */}
-                        <div className="p-4">
+                        <div className="px-4">
 
                             {/* STATS */}
-                            <div className="flex justify-between text-xs text-gray-600 pb-3 border-b">
+                            <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
                                 <div>{likeCount} likes</div>
                                 <div>{comments.length} comments</div>
                             </div>
 
                             {/* ACTION BUTTONS */}
-                            <div className="flex justify-between mt-2">
-                                <button
-                                    onClick={handlePostLike}
-                                    className="flex-1 flex items-center justify-center gap-2 hover:bg-gray-50 p-2"
-                                >
-                                    <ThumbsUp className={liked ? "text-blue-600" : ""} />
-                                    Like
-                                </button>
+                            <div className="flex justify-between mt-2 mb-2.5">
 
-                                <button
-                                    onClick={() => setShowCommentBox(!showCommentBox)}
-                                    className="flex-1 flex items-center justify-center gap-2 hover:bg-gray-50 p-2"
-                                >
-                                    <MessageCircle />
-                                    Comment
-                                </button>
+  {/* LIKE */}
+  <button
+    onClick={handlePostLike}
+    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
+  >
+    <ThumbsUp
+      size={18}
+      className={liked ? "text-blue-600" : ""}
+    />
+    <span>Like</span>
+  </button>
 
-                                {/* SEND BUTTON */}
-                                <button
-                                    onClick={() => setShowSendPopup(true)}
-                                    className="flex-1 flex items-center justify-center gap-2 hover:bg-gray-50 p-1"
-                                >
-                                    <i className="fa-regular fa-paper-plane"></i>
-                                    <span className="text-sm">Send</span>
-                                </button>
-                            </div>
+  {/* COMMENT */}
+  <button
+    onClick={() => setShowCommentBox(!showCommentBox)}
+    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
+  >
+    <MessageCircle size={18} />
+    <span>Comment</span>
+  </button>
+
+  {/* SEND */}
+  <button
+    onClick={() => setShowSendPopup(true)}
+    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
+  >
+    <i className="fa-regular fa-paper-plane text-[18px]"></i>
+    <span>Send</span>
+  </button>
+
+</div>
 
 
 
@@ -600,7 +607,7 @@ export default function Barbarikpost() {
                             )}
 
                             {/* COMMENTS LIST */}
-                            <div className="mt-6 space-y-5">
+                            <div className="mb-2.5">
                                 {comments.map((comment) => (
                                     <div key={comment.id} className="flex gap-3">
 

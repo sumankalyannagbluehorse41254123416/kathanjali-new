@@ -69,7 +69,7 @@ export default function Urmila({ section }: { section: SectionData }) {
           </Link>
         </div>
         {/* REACTIONS */}
-        <div className="p-4">
+        <div className="px-4">
           {/* TOP STATS */}
           <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount}</div>
