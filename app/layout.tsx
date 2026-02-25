@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // We define the profile content once here
   const profileItems = (
-    <div className="space-y-6">
+    <div className="overflow-x-hidden">
       <RightProfileCard />
       <AboutCard />
       <CurrentRoles />
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <ContactCard />
       <Categories />
       <PopularTags />
-      <NewsletterSignup />
+      {/* <NewsletterSignup /> */}
     </div>
   );
 

@@ -79,7 +79,7 @@ export default function MobileProfileWrapper({
         </main>
 
         {/* DESKTOP SIDEBAR */}
-        <aside className="hidden lg:block fixed right-0 top-0 h-screen w-[380px] border-l border-gray-200 bg-white overflow-y-auto p-5 custom-scrollbar overflow-x-hidden">
+        <aside className="hidden lg:block fixed right-0 top-0 h-screen  border-l border-gray-200 bg-white overflow-y-auto p-5 custom-scrollbar overflow-x-hidden">
           {profileContent}
         </aside>
 
@@ -97,7 +97,7 @@ export default function MobileProfileWrapper({
 
           {/* SIDE PANEL */}
           <div
-            className={`absolute right-0 top-0 h-full w-[85%] max-w-[400px] bg-white shadow-2xl transition-transform duration-300 ease-in-out transform ${isDrawerOpen ? "translate-x-0" : "translate-x-full"
+            className={`absolute right-0 top-0 h-full w-[85%] max-w-[390px] bg-white shadow-2xl transition-transform duration-300 ease-in-out transform ${isDrawerOpen ? "translate-x-0" : "translate-x-full"
               }`}
           >
             <div className="flex items-center justify-between p-5 border-b sticky top-0 bg-white z-10">

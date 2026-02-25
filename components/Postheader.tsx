@@ -47,7 +47,7 @@ export default function PostHeader({
   }, [showMenu]);
 
   return (
-    <div className="p-4 flex items-start gap-3 relative">
+    <div className="px-4 pt-4 flex items-start gap-3 relative">
       <img
         src={userImage}
         className="w-12 h-12 rounded-full"

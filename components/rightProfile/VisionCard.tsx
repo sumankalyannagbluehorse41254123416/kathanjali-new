@@ -2,7 +2,7 @@
 
 export default function VisionCard() {
   return (
-    <div className="bg-blue-50 border border-blue-300 rounded-lg p-4 mt-8">
+    <div className="bg-blue-50 border border-blue-300 rounded-lg p-4 mt-8 md:w-90">
       <div className="flex gap-2">
         <i className="fa-solid fa-bullseye text-blue-600 text-lg pt-[7px]"></i>
 
