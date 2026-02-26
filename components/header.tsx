@@ -36,7 +36,7 @@ export default function LoginHeader() {
       {!isLoggedIn ? (
         <button
           onClick={() => setIsPopupOpen(true)}
-          className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 z-10 hidden "
+          className="hidden lg:flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 z-10"
         >
           <FaUser />
           Login

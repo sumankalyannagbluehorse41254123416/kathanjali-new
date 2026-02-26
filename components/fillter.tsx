@@ -19,7 +19,7 @@ export default function CategoryPills() {
         <button
           key={cat}
           onClick={() => setActive(cat)}
-          className={`px-3 py-1 rounded-lg font-semibold transition
+          className={`px-3 py-1 rounded-lg transition text-sm lg:text-base
             ${
               active === cat
                 ? "bg-gray-900 text-white"
