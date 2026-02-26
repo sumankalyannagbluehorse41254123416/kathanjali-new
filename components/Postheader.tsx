@@ -54,7 +54,7 @@ export default function PostHeader({
         alt="avatar"
       />
       <div className="flex-1 min-w-0">
-        <h3 className="text-sm font-semibold text-gray-900">
+        <h3 className="text-[16px] font-semibold text-gray-900">
           {userName}
         </h3>
         <p className="text-xs text-gray-500">
