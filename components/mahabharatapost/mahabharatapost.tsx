@@ -160,7 +160,7 @@ export default function Mahabharatapost() {
     const [replyText, setReplyText] = useState("");
 
     return (
-      <div className="mt-2 flex gap-2">
+      <div className="mt-2 flex gap-2 mb-3">
         <input
           type="text"
           value={replyText}
@@ -309,7 +309,7 @@ export default function Mahabharatapost() {
             </div>
 
             {/* ---------------- STORY CONTENT ---------------- */}
-            <div className="px-3 pb-3">
+            <div className="px-4 pb-0">
               <h3 className="text-[32px] font-[600] mt-4">
                 The Golden Mongoose of Mahabharata
               </h3>
@@ -543,7 +543,7 @@ export default function Mahabharatapost() {
                       placeholder="Write a comment..."
                       className="w-full p-2 border rounded-lg text-sm resize-none"
                     />
-                    <div className="flex justify-end gap-2 mt-2">
+                    <div className="flex justify-end gap-2 mt-2 mb-3">
                       {/* Cancel Button */}
                       <button
                         onClick={() => {
@@ -585,7 +585,7 @@ export default function Mahabharatapost() {
                         {comment.text}
                       </div>
 
-                      <div className="flex items-center gap-4 text-xs mt-1 text-gray-600">
+                      <div className="flex items-center gap-4 text-xs mt-2 text-gray-600 mb-3">
                         <button
                           onClick={() => handleCommentLike(comment.id)}
                           className={comment.liked ? "text-blue-600 font-medium" : ""}
@@ -625,7 +625,7 @@ export default function Mahabharatapost() {
                               {reply.text}
                             </div>
 
-                            <div className="flex items-center gap-4 text-xs mt-1 text-gray-600">
+                            <div className="flex items-center gap-4 text-xs mt-2 text-gray-600 mb-3">
                               <button
                                 onClick={() => handleCommentLike(comment.id)}
                                 className={comment.liked ? "text-blue-600 font-medium" : ""}

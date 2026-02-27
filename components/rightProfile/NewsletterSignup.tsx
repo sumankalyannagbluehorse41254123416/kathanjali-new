@@ -2,7 +2,7 @@
 
 export default function NewsletterSignup() {
     return (
-        <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg mt-8 md:w-90">
+        <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg mt-8 md:w-full">
             <div className="text-center space-y-3">
 
                 <div className="flex items-center justify-center space-x-2">

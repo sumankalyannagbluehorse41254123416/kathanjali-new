@@ -97,7 +97,7 @@ export default function LoginHeader() {
       <EmailPopup
         open={emailPopupOpen}
         setOpen={setEmailPopupOpen}
-        onLoginSuccess={handleLogin}   // ✔ important!
+        onLoginSuccess={handleLogin}   
       />
     </div>
   );

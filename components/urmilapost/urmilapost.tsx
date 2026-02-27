@@ -144,7 +144,7 @@ export default function Urmilapost() {
             </div>
 
             {/* ---------------- STORY CONTENT ---------------- */}
-            <div className="px-3 pb-3">
+            <div className="px-4 pb-0">
               <h3 className="text-[32px] font-[600] mt-4">
                 Urmila - The Woman Who Slept So the World Could Wake
               </h3>
@@ -369,7 +369,7 @@ export default function Urmilapost() {
                         placeholder="Write a comment..."
                       ></textarea>
 
-                      <div className="flex justify-end gap-2 mt-2">
+                      <div className="flex justify-end gap-2 mt-2 mb-3">
                         <button
                           onClick={() => setShowCommentBox(false)}
                           className="px-3 py-1.5 rounded border text-sm hover:bg-gray-100"
