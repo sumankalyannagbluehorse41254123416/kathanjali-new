@@ -26,11 +26,14 @@ export default function LoginHeader() {
 
       {/* LEFT TITLE */}
       <div>
-        <h1 className="text-4xl font-bold text-gray-900">KathaAnjali</h1>
-        <p className="text-gray-600 mt-1">
-          Expert perspectives on healthcare innovation and leadership
-        </p>
-      </div>
+  <h1 className="text-[24px] lg:text-4xl font-bold text-gray-900">
+    KathaAnjali
+  </h1>
+
+  <p className="text-gray-600 mt-1 text-sm lg:text-base">
+    Expert perspectives on healthcare innovation and leadership
+  </p>
+</div>
 
       {/* LOGIN / LOGOUT BUTTON */}
       {!isLoggedIn ? (

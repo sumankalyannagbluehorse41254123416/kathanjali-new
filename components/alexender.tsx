@@ -222,15 +222,20 @@ export default function Alexander() {
           </div>
 
           {/* ACTION BUTTONS */}
-          <div className="flex justify-between mt-2">
+
+
+          <div className="flex justify-between mt-2 mb-2.5">
 
             {/* LIKE */}
             <button
               onClick={handlePostLike}
               className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
             >
-              <ThumbsUp className={liked ? "text-blue-600" : ""} />
-              <span>Like</span>
+              <ThumbsUp
+                className={`w-[14px] h-[14px] lg:w-[18px] lg:h-[18px] ${liked ? "text-blue-600" : ""
+                  }`}
+              />
+              <span className="text-sm lg:text-base">Like</span>
             </button>
 
             {/* COMMENT */}
@@ -238,8 +243,8 @@ export default function Alexander() {
               onClick={() => setShowCommentBox(!showCommentBox)}
               className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
             >
-              <MessageCircle />
-              <span>Comment</span>
+              <MessageCircle className="w-[14px] h-[14px] lg:w-[18px] lg:h-[18px]" />
+              <span className="text-sm lg:text-base">Comment</span>
             </button>
 
             {/* SEND */}
@@ -247,13 +252,11 @@ export default function Alexander() {
               onClick={() => setShowSendPopup(true)}
               className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
             >
-              <i className="fa-regular fa-paper-plane"></i>
-              <span className="text-sm">Send</span>
+              <i className="fa-regular fa-paper-plane text-[14px] lg:text-[18px]"></i>
+              <span className="text-sm lg:text-base">Send</span>
             </button>
 
           </div>
-
-
 
 
 
