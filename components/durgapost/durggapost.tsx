@@ -35,7 +35,7 @@ export default function durgaPost() {
   -----------------------------*/
 
 
-    /* ---------- POST STATE ---------- */
+  /* ---------- POST STATE ---------- */
 
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(523);
@@ -190,7 +190,7 @@ export default function durgaPost() {
   // 3-dot menu state
   const [openMenu, setOpenMenu] = useState<boolean>(false);
 
- 
+
 
   /* ----------------------------
       OUTSIDE CLICK FOR MENU
@@ -217,7 +217,7 @@ export default function durgaPost() {
   /* ----------------------------
       LIKE HANDLER
   -----------------------------*/
- 
+
 
   return (
     <div className="max-w-3xl mx-auto ml-0">
@@ -412,241 +412,241 @@ export default function durgaPost() {
 
             {/* ---------------- REACTIONS ROW ---------------- */}
             {/* REACTIONS */}
-        <div className="px-4">
+            <div className="px-4">
 
-          {/* STATS */}
-          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
-            <div>{likeCount} likes</div>
-            <div>{comments.length} comments</div>
-          </div>
+              {/* STATS */}
+              <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
+                <div>{likeCount} likes</div>
+                <div>{comments.length} comments</div>
+              </div>
 
-          {/* ACTION BUTTONS */}
-          <div className="flex justify-between mt-2 mb-2.5">
+              {/* ACTION BUTTONS */}
+              <div className="flex justify-between mt-2 mb-2.5">
 
-  {/* LIKE */}
-  <button
-    onClick={handlePostLike}
-    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
-  >
-    <ThumbsUp
-      size={18}
-      className={liked ? "text-blue-600" : ""}
-    />
-    <span>Like</span>
-  </button>
+                {/* LIKE */}
+                <button
+                  onClick={handlePostLike}
+                  className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
+                >
+                  <ThumbsUp
+                    className={`w-[14px] h-[14px] lg:w-[18px] lg:h-[18px] ${liked ? "text-blue-600" : ""
+                      }`}
+                  />
+                  <span className="text-sm lg:text-base">Like</span>
+                </button>
 
-  {/* COMMENT */}
-  <button
-    onClick={() => setShowCommentBox(!showCommentBox)}
-    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
-  >
-    <MessageCircle size={18} />
-    <span>Comment</span>
-  </button>
+                {/* COMMENT */}
+                <button
+                  onClick={() => setShowCommentBox(!showCommentBox)}
+                  className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
+                >
+                  <MessageCircle className="w-[14px] h-[14px] lg:w-[18px] lg:h-[18px]" />
+                  <span className="text-sm lg:text-base">Comment</span>
+                </button>
 
-  {/* SEND */}
-  <button
-    onClick={() => setShowSendPopup(true)}
-    className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition text-[18px]"
-  >
-    <i className="fa-regular fa-paper-plane text-[18px]"></i>
-    <span>Send</span>
-  </button>
-
-</div>
-
-
-
-
-
-          {showSendPopup && (
-            <div className="fixed inset-0 flex justify-center items-center z-50">
-              <div className="bg-white w-96 rounded-lg shadow-lg p-4">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-lg font-semibold">Send to...</h2>
-                  <button
-                    onClick={() => setShowSendPopup(false)}
-                    className="text-gray-500 hover:text-black text-xl"
-                  >
-                    ×
-                  </button>
-                </div>
-
-                <input type="text" placeholder="Search people" className="border w-full p-2 rounded mt-3" />
-
-                <div className="mt-4 space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
-                    <div>
-                      <p className="font-medium">John Doe</p>
-                      <p className="text-xs text-gray-500">Software Engineer</p>
-                    </div>
-                    <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
-                    <div>
-                      <p className="font-medium">Sarah Parker</p>
-                      <p className="text-xs text-gray-500">Designer</p>
-                    </div>
-                    <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
-                  </div>
-                </div>
-
-                {/* SOCIAL SHARE ICONS */}
-                <div className="flex items-center justify-center gap-6 border-t pt-4 pb-2 text-gray-700 mt-7">
-
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-solid fa-link text-xl"></i>
-                  </a>
-
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-instagram text-xl"></i>
-                  </a>
-
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-linkedin text-xl"></i>
-                  </a>
-
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-x-twitter text-xl"></i>
-                  </a>
-
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-facebook text-xl"></i>
-                  </a>
-
-                </div>
-
+                {/* SEND */}
+                <button
+                  onClick={() => setShowSendPopup(true)}
+                  className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
+                >
+                  <i className="fa-regular fa-paper-plane text-[14px] lg:text-[18px]"></i>
+                  <span className="text-sm lg:text-base">Send</span>
+                </button>
 
               </div>
-            </div>
-          )}
 
-          {/* COMMENT INPUT */}
-          {showCommentBox && (
-            <div className="mt-4 flex gap-3">
-              <img
-                src="/images/vineet.jpg"
-                className="w-9 h-9 rounded-full"
-                alt="you"
-              />
-              <div className="flex-1">
-                <textarea
-                  rows={2}
-                  value={commentInput}
-                  onChange={(e) => setCommentInput(e.target.value)}
-                  placeholder="Write a comment..."
-                  className="w-full p-2 border rounded-lg text-sm resize-none"
-                />
-                <div className="flex justify-end gap-2 mt-2">
-                  {/* Cancel Button */}
-                  <button
-                    onClick={() => {
-                      setShowCommentBox(false);
-                      setCommentInput("");
-                    }}
-                    className="px-4 py-1.5 rounded text-sm border border-gray-300 hover:bg-gray-100"
-                  >
-                    Cancel
-                  </button>
 
-                  {/* Post Button */}
-                  <button
-                    onClick={handleCommentSubmit}
-                    disabled={!commentInput.trim()}
-                    className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm disabled:bg-gray-300"
-                  >
-                    Post
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
 
-          {/* COMMENTS LIST */}
-          <div className="mb-2.5">
-            {comments.map((comment) => (
-              <div key={comment.id} className="flex gap-3">
 
-                <img
-                  src="/images/vineet.jpg"
-                  className="w-9 h-9 rounded-full"
-                  alt="avatar"
-                />
 
-                <div className="flex-1">
+              {showSendPopup && (
+                <div className="fixed inset-0 flex justify-center items-center z-50">
+                  <div className="bg-white w-96 rounded-lg shadow-lg p-4">
+                    <div className="flex justify-between items-center">
+                      <h2 className="text-lg font-semibold">Send to...</h2>
+                      <button
+                        onClick={() => setShowSendPopup(false)}
+                        className="text-gray-500 hover:text-black text-xl"
+                      >
+                        ×
+                      </button>
+                    </div>
 
-                  <div className="bg-gray-100 p-3 rounded-lg text-sm">
-                    {comment.text}
-                  </div>
+                    <input type="text" placeholder="Search people" className="border w-full p-2 rounded mt-3" />
 
-                  <div className="flex items-center gap-4 text-xs mt-1 text-gray-600">
-                    <button
-                      onClick={() => handleCommentLike(comment.id)}
-                      className={comment.liked ? "text-blue-600 font-medium" : ""}
-                    >
-                      Like ({comment.likes})
-                    </button>
-
-                    <button
-                      onClick={() => toggleReplyBox(comment.id)}
-                    >
-                      Reply
-                    </button>
-                  </div>
-
-                  {comment.showReplyBox && (
-                    <ReplyBox
-                      onSubmit={(text) =>
-                        handleReplySubmit(comment.id, text)
-                      }
-                    />
-                  )}
-
-                  {/* REPLIES */}
-                  {comment.replies.map((reply) => (
-                    <div
-                      key={reply.id}
-                      className="flex gap-2 mt-3 ml-6"
-                    >
-                      <img
-                        src="/images/vineet.jpg"
-                        className="w-7 h-7 rounded-full"
-                        alt="avatar"
-                      />
-
-                      <div className="flex-1">
-                        <div className="bg-gray-100 p-2 rounded-lg text-sm">
-                          {reply.text}
+                    <div className="mt-4 space-y-3">
+                      <div className="flex items-center gap-3">
+                        <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
+                        <div>
+                          <p className="font-medium">John Doe</p>
+                          <p className="text-xs text-gray-500">Software Engineer</p>
                         </div>
-
-                        <div className="flex items-center gap-4 text-xs mt-1 text-gray-600">
-                          <button
-                            onClick={() => handleCommentLike(comment.id)}
-                            className={comment.liked ? "text-blue-600 font-medium" : ""}
-                          >
-                            Like ({comment.likes})
-                          </button>
-
-                          <button
-                            onClick={() => toggleReplyBox(comment.id)}
-                          >
-                            Reply
-                          </button>
-                        </div>
+                        <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
                       </div>
 
+                      <div className="flex items-center gap-3">
+                        <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
+                        <div>
+                          <p className="font-medium">Sarah Parker</p>
+                          <p className="text-xs text-gray-500">Designer</p>
+                        </div>
+                        <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
+                      </div>
                     </div>
-                  ))}
 
+                    {/* SOCIAL SHARE ICONS */}
+                    <div className="flex items-center justify-center gap-6 border-t pt-4 pb-2 text-gray-700 mt-7">
+
+                      <a href="#" className="hover:opacity-75">
+                        <i className="fa-solid fa-link text-xl"></i>
+                      </a>
+
+                      <a href="#" className="hover:opacity-75">
+                        <i className="fa-brands fa-instagram text-xl"></i>
+                      </a>
+
+                      <a href="#" className="hover:opacity-75">
+                        <i className="fa-brands fa-linkedin text-xl"></i>
+                      </a>
+
+                      <a href="#" className="hover:opacity-75">
+                        <i className="fa-brands fa-x-twitter text-xl"></i>
+                      </a>
+
+                      <a href="#" className="hover:opacity-75">
+                        <i className="fa-brands fa-facebook text-xl"></i>
+                      </a>
+
+                    </div>
+
+
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              )}
 
-        </div>
+              {/* COMMENT INPUT */}
+              {showCommentBox && (
+                <div className="mt-4 flex gap-3">
+                  <img
+                    src="/images/vineet.jpg"
+                    className="w-9 h-9 rounded-full"
+                    alt="you"
+                  />
+                  <div className="flex-1">
+                    <textarea
+                      rows={2}
+                      value={commentInput}
+                      onChange={(e) => setCommentInput(e.target.value)}
+                      placeholder="Write a comment..."
+                      className="w-full p-2 border rounded-lg text-sm resize-none"
+                    />
+                    <div className="flex justify-end gap-2 mt-2">
+                      {/* Cancel Button */}
+                      <button
+                        onClick={() => {
+                          setShowCommentBox(false);
+                          setCommentInput("");
+                        }}
+                        className="px-4 py-1.5 rounded text-sm border border-gray-300 hover:bg-gray-100"
+                      >
+                        Cancel
+                      </button>
+
+                      {/* Post Button */}
+                      <button
+                        onClick={handleCommentSubmit}
+                        disabled={!commentInput.trim()}
+                        className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm disabled:bg-gray-300"
+                      >
+                        Post
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* COMMENTS LIST */}
+              <div className="mb-2.5">
+                {comments.map((comment) => (
+                  <div key={comment.id} className="flex gap-3">
+
+                    <img
+                      src="/images/vineet.jpg"
+                      className="w-9 h-9 rounded-full"
+                      alt="avatar"
+                    />
+
+                    <div className="flex-1">
+
+                      <div className="bg-gray-100 p-3 rounded-lg text-sm">
+                        {comment.text}
+                      </div>
+
+                      <div className="flex items-center gap-4 text-xs mt-1 text-gray-600">
+                        <button
+                          onClick={() => handleCommentLike(comment.id)}
+                          className={comment.liked ? "text-blue-600 font-medium" : ""}
+                        >
+                          Like ({comment.likes})
+                        </button>
+
+                        <button
+                          onClick={() => toggleReplyBox(comment.id)}
+                        >
+                          Reply
+                        </button>
+                      </div>
+
+                      {comment.showReplyBox && (
+                        <ReplyBox
+                          onSubmit={(text) =>
+                            handleReplySubmit(comment.id, text)
+                          }
+                        />
+                      )}
+
+                      {/* REPLIES */}
+                      {comment.replies.map((reply) => (
+                        <div
+                          key={reply.id}
+                          className="flex gap-2 mt-3 ml-6"
+                        >
+                          <img
+                            src="/images/vineet.jpg"
+                            className="w-7 h-7 rounded-full"
+                            alt="avatar"
+                          />
+
+                          <div className="flex-1">
+                            <div className="bg-gray-100 p-2 rounded-lg text-sm">
+                              {reply.text}
+                            </div>
+
+                            <div className="flex items-center gap-4 text-xs mt-1 text-gray-600">
+                              <button
+                                onClick={() => handleCommentLike(comment.id)}
+                                className={comment.liked ? "text-blue-600 font-medium" : ""}
+                              >
+                                Like ({comment.likes})
+                              </button>
+
+                              <button
+                                onClick={() => toggleReplyBox(comment.id)}
+                              >
+                                Reply
+                              </button>
+                            </div>
+                          </div>
+
+                        </div>
+                      ))}
+
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
