@@ -166,7 +166,7 @@ export default function Thebenchpost() {
     const [replyText, setReplyText] = useState("");
 
     return (
-      <div className="mt-2 flex gap-2">
+      <div className="mt-2 flex gap-2 mb-3">
         <input
           type="text"
           value={replyText}
@@ -188,7 +188,7 @@ export default function Thebenchpost() {
   };
 
   return (
-    <div className="max-w-2xl  mt-8">
+    <div className="w-full lg:max-w-2xl  mt-8">
       <div className="bg-white rounded-lg shadow overflow-hidden">
         {/* HEADER */}
         <Postheader />
@@ -350,7 +350,7 @@ export default function Thebenchpost() {
                   placeholder="Write a comment..."
                   className="w-full p-2 border rounded-lg text-sm resize-none"
                 />
-                <div className="flex justify-end gap-2 mt-2">
+                <div className="flex justify-end gap-2 mt-2 mb-3">
                   {/* Cancel Button */}
                   <button
                     onClick={() => {
@@ -392,7 +392,7 @@ export default function Thebenchpost() {
                     {comment.text}
                   </div>
 
-                  <div className="flex items-center gap-4 text-xs mt-1 text-gray-600">
+                  <div className="flex items-center gap-4 text-xs mt-2 text-gray-600 mb-3">
                     <button
                       onClick={() => handleCommentLike(comment.id)}
                       className={comment.liked ? "text-blue-600 font-medium" : ""}
@@ -432,7 +432,7 @@ export default function Thebenchpost() {
                           {reply.text}
                         </div>
 
-                        <div className="flex items-center gap-4 text-xs mt-1 text-gray-600">
+                        <div className="flex items-center gap-4 text-xs mt-2 text-gray-600 mb-3">
                           <button
                             onClick={() => handleCommentLike(comment.id)}
                             className={comment.liked ? "text-blue-600 font-medium" : ""}

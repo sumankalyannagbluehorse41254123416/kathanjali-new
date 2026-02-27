@@ -2,7 +2,7 @@
 
 export default function AboutCard() {
   return (
-    <div className="card md:w-90 h-auto bg-white border border-gray-300 rounded-lg  p-4 mt-8">
+    <div className="card md:w-full h-auto bg-white border border-gray-300 rounded-lg  p-4 mt-8">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold">About</h2>
 

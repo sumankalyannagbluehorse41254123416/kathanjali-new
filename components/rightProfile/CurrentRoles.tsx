@@ -2,7 +2,7 @@
 
 export default function CurrentRoles() {
   return (
-    <div className="md:w-90 h-auto border border-gray-300 rounded-lg p-6 shadow-sm mt-8 bg-white">
+    <div className=" h-auto border border-gray-300 rounded-lg p-6 shadow-sm mt-8 bg-white">
       <h2 className="text-lg font-bold text-gray-800 mb-4">Current Roles</h2>
 
       <ul className="space-y-3">

@@ -2,7 +2,7 @@
 
 export default function Categories() {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6 md:w-90 mt-8">
+    <div className="bg-white rounded-lg border border-gray-200 p-6 md:w-full mt-8">
       <h3 className="text-lg font-semibold text-gray-800 mb-4">Categories</h3>
 
       <div className="space-y-3">

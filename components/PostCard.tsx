@@ -35,7 +35,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
   };
 
   return (
-    <div className="max-w-2xl mt-8">
+    <div className="w-full llg:max-w-2xl mt-8">
       <div className="bg-white rounded-lg shadow overflow-hidden">
         {/* HEADER */}
         <Postheader />
@@ -128,7 +128,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
                     value={commentInput}
                     onChange={(e) => setCommentInput(e.target.value)}
                   />
-                  <div className="flex justify-end gap-2 mt-2">
+                  <div className="flex justify-end gap-2 mt-2 mb-3">
                     <button
                       onClick={() => setShowCommentBox(false)}
                       className="px-3 py-1.5 rounded border text-sm hover:bg-gray-100"

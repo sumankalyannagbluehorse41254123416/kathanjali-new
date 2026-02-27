@@ -6,7 +6,7 @@ export default function AchievementsCard() {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="card md:w-90 h-auto bg-white border border-gray-300 rounded-lg  p-4 mt-8">
+    <div className="card md:w-full h-auto bg-white border border-gray-300 rounded-lg  p-4 mt-8">
       {/* HEADER */}
       <div className="flex items-center justify-between">
         <div className="flex gap-2">
