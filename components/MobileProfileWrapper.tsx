@@ -30,7 +30,7 @@ export default function MobileProfileWrapper({
   return (
     <>
       {/* ================= MOBILE HEADER ================= */}
-      <header className="lg:hidden flex items-center justify-between p-4 bg-white border-b sticky top-0 z-40">
+      <header className="lg:hidden flex items-center justify-between p-4 bg-white border-b fixed top-0 z-40 w-full">
         <span className="font-bold text-xl text-blue-900">
           KathaAnjali
         </span>
