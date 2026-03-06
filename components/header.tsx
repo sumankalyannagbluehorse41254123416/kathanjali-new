@@ -26,7 +26,7 @@ export default function LoginHeader() {
 
       {/* LEFT TITLE */}
       <div>
-  <h1 className="text-[24px] lg:text-4xl font-bold text-gray-900">
+  <h1 className="text-[24px] lg:text-4xl font-bold text-gray-900 md:pt-15">
     KathaAnjali
   </h1>
 
