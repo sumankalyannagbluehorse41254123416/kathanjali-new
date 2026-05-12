@@ -158,7 +158,7 @@ export default function Urmilapost() {
                 <p className="font-base mb-5">Some teach. Some heal. All stay.</p>
               </div>
 
-              <p className="text-base text-gray-900 leading-relaxed  mb-4 mt-4">Every great hero’s journey
+              <p className="text-base text-gray-900 leading-relaxed  mb-4 mt-2">Every great hero’s journey
                 rests on
                 a thousand silent acts of service. We celebrate the triumphant names - Rama, Lakshmana,
                 Sita, Hanuman, but what of the legions of invisible hearts that held it all together? In
@@ -322,7 +322,7 @@ export default function Urmilapost() {
                     </div>
 
                     {/* SOCIAL SHARE ICONS */}
-              <div className="flex items-center justify-center gap-6 border-t pt-4 pb-2 text-gray-700 mt-7">
+              <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
 
                 <a href="#" className="hover:opacity-75">
                   <i className="fa-solid fa-link text-xl"></i>

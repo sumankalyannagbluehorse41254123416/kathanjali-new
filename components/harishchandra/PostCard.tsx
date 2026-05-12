@@ -443,7 +443,7 @@ export default function PostCard() {
                     </div>
 
                     {/* SOCIAL SHARE ICONS */}
-              <div className="flex items-center justify-center gap-6 border-t pt-4 pb-2 text-gray-700 mt-7">
+              <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
 
                 <a href="#" className="hover:opacity-75">
                   <i className="fa-solid fa-link text-xl"></i>

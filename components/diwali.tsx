@@ -36,7 +36,7 @@ export default function Diwali({ section }: { section: SectionData }) {
   };
 
   return (
-    <div className="w-full llg:max-w-2xl mt-8">
+    <div className="w-full lg:max-w-2xl mt-8">
       <div className="bg-white rounded-lg shadow overflow-hidden">
 
         {/* HEADER */}
@@ -80,7 +80,7 @@ export default function Diwali({ section }: { section: SectionData }) {
         <div className="p-4">
 
           {/* TOP STATS */}
-          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
+          <div className="flex justify-between text-sm text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount}</div>
             <div>
               <span>{comments.length}</span> comments • 89 reposts

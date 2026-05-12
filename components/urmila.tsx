@@ -35,7 +35,7 @@ export default function Urmila({ section }: { section: SectionData }) {
   ];
 
   return (
-    <div className="w-full llg:max-w-2xl mt-8">
+    <div className="w-full lg:max-w-2xl mt-8">
       <div className="bg-white rounded-lg shadow overflow-hidden">
         {/* HEADER */}
         <PostHeader />
@@ -47,7 +47,7 @@ export default function Urmila({ section }: { section: SectionData }) {
             alt="section-image"
             width={672}
             height={391.14} // <-- required
-            className="w-full rounded-lg object-cover h-auto p-4"
+            className="w-full rounded-lg object-cover h-auto p-4 pb-0"
           />
         </div>
 
@@ -71,7 +71,7 @@ export default function Urmila({ section }: { section: SectionData }) {
         {/* REACTIONS */}
         <div className="px-4">
           {/* TOP STATS */}
-          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
+          <div className="flex justify-between text-sm text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount}</div>
             <div>
               <span>{comments.length}</span> comments • 89 reposts
@@ -202,7 +202,7 @@ export default function Urmila({ section }: { section: SectionData }) {
               </div>
 
               {/* SOCIAL SHARE ICONS */}
-              <div className="flex items-center justify-center gap-6 border-t pt-4 pb-2 text-gray-700 mt-7">
+              <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
                 <a href="#" className="hover:opacity-75">
                   <i className="fa-solid fa-link text-xl"></i>
                 </a>

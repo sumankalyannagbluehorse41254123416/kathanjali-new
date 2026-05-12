@@ -35,7 +35,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
   };
 
   return (
-    <div className="w-full llg:max-w-2xl mt-8">
+    <div className="w-full lg:max-w-2xl mt-8">
       <div className="bg-white rounded-lg shadow overflow-hidden">
         {/* HEADER */}
         <Postheader />
@@ -49,7 +49,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
             alt="Post Image"
             width={672}
             height={391.14}
-            className="w-full rounded-lg object-cover h-auto p-4"
+            className="w-full rounded-lg object-cover h-auto p-4 pb-0"
             unoptimized // remove if your image domain is added in next.config.js
           />
         </div>
@@ -77,7 +77,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
         {/* ------------------------ */}
         <div className="p-4">
           {/* TOP STATS */}
-          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
+          <div className="flex justify-between text-sm text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount}</div>
             <div>
               <span>{comments.length}</span> comments • 89 reposts
@@ -204,7 +204,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
                 ))}
               </div>
 
-              <div className="flex items-center justify-center gap-6 border-t pt-4 pb-2 text-gray-700 mt-7">
+              <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
                 <i className="fa-solid fa-link text-xl"></i>
                 <i className="fa-brands fa-instagram text-xl"></i>
                 <i className="fa-brands fa-linkedin text-xl"></i>

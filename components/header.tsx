@@ -22,11 +22,11 @@ export default function LoginHeader() {
   }
 
   return (
-    <div className="flex items-center justify-between max-w-2xl">
+    <div className="flex items-start justify-between max-w-2xl md:pt-15">
 
       {/* LEFT TITLE */}
       <div>
-  <h1 className="text-[24px] lg:text-4xl font-bold text-gray-900 md:pt-15">
+  <h1 className="text-[24px] lg:text-4xl font-bold text-gray-900">
     KathaAnjali
   </h1>
 
@@ -39,7 +39,7 @@ export default function LoginHeader() {
       {!isLoggedIn ? (
         <button
           onClick={() => setIsPopupOpen(true)}
-          className="hidden lg:flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 z-10"
+          className="mt-1 hidden lg:flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 z-10 transition-all duration-200 ease-in-out"
         >
           <FaUser />
           Login

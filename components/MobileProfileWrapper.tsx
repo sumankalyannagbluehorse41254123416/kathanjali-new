@@ -31,7 +31,7 @@ export default function MobileProfileWrapper({
     <>
       {/* ================= MOBILE HEADER ================= */}
       <header className="lg:hidden flex items-center justify-between p-4 bg-white border-b fixed top-0 z-40 w-full">
-        <span className="font-bold text-xl text-blue-900">
+        <span className="font-bold text-xl sm:text-2xl text-blue-900">
           KathaAnjali
         </span>
 
@@ -40,7 +40,7 @@ export default function MobileProfileWrapper({
           {!isLoggedIn ? (
             <button
               onClick={() => setIsPopupOpen(true)}
-              className="flex items-center gap-2 border border-gray-300 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
+              className="flex items-center gap-2 border border-gray-300 px-3 py-1.5 rounded-lg hover:bg-gray-100 transition"
             >
               <FaUser />
               Login
@@ -58,7 +58,7 @@ export default function MobileProfileWrapper({
           {/* PROFILE BUTTON */}
           <button
             onClick={() => setIsDrawerOpen(true)}
-            className="px-3 py-2 text-base bg-blue-600 text-white rounded-md flex items-center gap-2 hover:bg-blue-700 transition"
+            className="px-3 py-1.5 text-base bg-blue-600 text-white rounded-md flex items-center gap-2 hover:bg-blue-700 transition"
           >
             <FaUser />
             Profile
