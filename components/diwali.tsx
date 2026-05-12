@@ -43,7 +43,7 @@ export default function Diwali({ section }: { section: SectionData }) {
         <PostHeader />
 
         {/* IMAGE FROM section.image */}
-        <div className="mt-3 relative p-4">
+        <div className="mt-0.5 relative p-4">
           <Image
             src={section?.image || "/images/default.jpg"}
             alt="Diwali Image"
@@ -70,7 +70,7 @@ export default function Diwali({ section }: { section: SectionData }) {
             href="/diwalipost"
             className="text-[15px] text-blue-600 font-medium inline-flex items-center gap-1 group"
           >
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[1px] after:bg-blue-600 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-200">
+            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[1px] after:bg-blue-600  after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-200">
               Read More
             </span>
           </Link>
@@ -144,7 +144,7 @@ export default function Diwali({ section }: { section: SectionData }) {
                     </button>
                     <button
                       onClick={handleCommentSubmit}
-                      className="px-3 py-1.5 rounded bg-blue-600 text-white text-sm disabled:bg-gray-300 disabled:text-gray-600"
+                      className="px-3 py-1.5 rounded bg-blue-600  text-white text-sm disabled:bg-gray-300 disabled:text-gray-600"
                       disabled={!commentInput.trim()}
                     >
                       Post

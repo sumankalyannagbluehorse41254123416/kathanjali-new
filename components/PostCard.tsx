@@ -43,7 +43,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
         {/* ------------------------ */}
         {/*       DYNAMIC IMAGE      */}
         {/* ------------------------ */}
-        <div className="mt-3 relative">
+        <div className="mt-0.5 relative">
           <Image
             src={image || "/placeholder.jpg"}
             alt="Post Image"
@@ -66,7 +66,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
             href="/harishchandra"
             className="text-[15px] text-blue-600 font-medium inline-flex items-center gap-1 group"
           >
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[1px] after:bg-blue-600 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-200">
+            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[1px] after:bg-blue-600  after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-200">
               Read More
             </span>
           </Link>
@@ -137,7 +137,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
                     </button>
                     <button
                       onClick={handleCommentSubmit}
-                      className="px-3 py-1.5 rounded bg-blue-600 text-white text-sm disabled:bg-gray-300 disabled:text-gray-600"
+                      className="px-3 py-1.5 rounded bg-blue-600  text-white text-sm disabled:bg-gray-300 disabled:text-gray-600"
                       disabled={!commentInput.trim()}
                     >
                       Post
@@ -173,7 +173,7 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
                 <h2 className="text-lg font-semibold">Share this Post</h2>
                 <button
                   onClick={() => setShowSendPopup(false)}
-                  className="text-gray-500 hover:text-black text-xl"
+                  className="text-gray-600 hover:text-black text-2xl"
                 >
                   ×
                 </button>
@@ -195,9 +195,9 @@ export default function PostCard({ image, shortDescription }: PostCardProps) {
                     />
                     <div>
                       <p className="font-medium">{user.name}</p>
-                      <p className="text-xs text-gray-500">{user.role}</p>
+                      <p className="text-xs md:text-sm text-gray-500">{user.role}</p>
                     </div>
-                    <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-blue-600 hover:text-white">
+                    <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-blue-600  hover:text-white">
                       Send
                     </button>
                   </div>

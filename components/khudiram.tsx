@@ -178,7 +178,7 @@ export default function Khudiram() {
             onSubmit(replyText);
             setReplyText("");
           }}
-          className="bg-blue-600 text-white px-3 rounded-lg text-sm"
+          className="bg-blue-600  text-white px-3 rounded-lg text-sm"
         >
           Post
         </button>
@@ -194,7 +194,7 @@ export default function Khudiram() {
         <Postheader />
 
         {/* IMAGE */}
-        <div className="mt-3 relative">
+        <div className="mt-0.5 relative">
           <a href="#">
             <img
               src="/images/khudiram.jpeg"
@@ -217,7 +217,7 @@ export default function Khudiram() {
             href="/khudirampost"
             className="text-[15px] text-blue-600 font-medium inline-flex items-center gap-1 group"
           >
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[1px] after:bg-blue-600 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-200">
+            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[1px] after:bg-blue-600  after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-200">
               Read More
             </span>
           </Link>
@@ -271,71 +271,112 @@ export default function Khudiram() {
 
 
 
-          {showSendPopup && (
-            <div className="fixed inset-0 flex justify-center items-center z-50">
-              <div className="bg-white w-96 rounded-lg shadow-lg p-4">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-lg font-semibold">Send to...</h2>
-                  <button
-                    onClick={() => setShowSendPopup(false)}
-                    className="text-gray-500 hover:text-black text-xl"
-                  >
-                    ×
+          {/* SEND POPUP */}
+          <div
+            className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 ${showSendPopup
+                ? "opacity-100 visible"
+                : "opacity-0 invisible"
+              }`}
+          >
+            {/* BACKDROP */}
+            <div
+              onClick={() => setShowSendPopup(false)}
+              className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${showSendPopup ? "opacity-100" : "opacity-0"
+                }`}
+            />
+
+            {/* POPUP */}
+            <div
+              className={`relative bg-white w-96 rounded-lg shadow-lg p-4 transform transition-all duration-300 ease-out ${showSendPopup
+                  ? "scale-100 opacity-100 translate-y-0"
+                  : "scale-95 opacity-0 translate-y-4"
+                }`}
+            >
+              <div className="flex justify-between items-center">
+                <h2 className="text-lg font-semibold">Send to...</h2>
+
+                <button
+                  onClick={() => setShowSendPopup(false)}
+                  className="text-gray-600 hover:text-black text-2xl"
+                >
+                  ×
+                </button>
+              </div>
+
+              <input
+                type="text"
+                placeholder="Search people"
+                className="border w-full p-2 rounded mt-3"
+              />
+
+              <div className="mt-4 space-y-3">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/images/vineet.jpg"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full"
+                    alt=""
+                  />
+
+                  <div>
+                    <p className="font-medium">John Doe</p>
+                    <p className="text-xs md:text-sm text-gray-500">
+                      Software Engineer
+                    </p>
+                  </div>
+
+                  <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">
+                    Send
                   </button>
                 </div>
 
-                <input type="text" placeholder="Search people" className="border w-full p-2 rounded mt-3" />
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/images/vineet.jpg"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full"
+                    alt=""
+                  />
 
-                <div className="mt-4 space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
-                    <div>
-                      <p className="font-medium">John Doe</p>
-                      <p className="text-xs text-gray-500">Software Engineer</p>
-                    </div>
-                    <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
+                  <div>
+                    <p className="font-medium">Sarah Parker</p>
+                    <p className="text-xs md:text-sm text-gray-500">
+                      Designer
+                    </p>
                   </div>
 
-                  <div className="flex items-center gap-3">
-                    <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
-                    <div>
-                      <p className="font-medium">Sarah Parker</p>
-                      <p className="text-xs text-gray-500">Designer</p>
-                    </div>
-                    <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
-                  </div>
+                  <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">
+                    Send
+                  </button>
                 </div>
+              </div>
 
-                {/* SOCIAL SHARE ICONS */}
-                <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
+              {/* SOCIAL SHARE ICONS */}
+              <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-solid fa-link text-xl"></i>
+                </a>
 
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-solid fa-link text-xl"></i>
-                  </a>
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-brands fa-instagram text-xl"></i>
+                </a>
 
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-instagram text-xl"></i>
-                  </a>
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-brands fa-linkedin text-xl"></i>
+                </a>
 
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-linkedin text-xl"></i>
-                  </a>
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-brands fa-x-twitter text-xl"></i>
+                </a>
 
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-x-twitter text-xl"></i>
-                  </a>
-
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-facebook text-xl"></i>
-                  </a>
-
-                </div>
-
-
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-brands fa-facebook text-xl"></i>
+                </a>
               </div>
             </div>
-          )}
-
+          </div>
           {/* COMMENT INPUT */}
           {showCommentBox && (
             <div className="mt-4 flex gap-3">
@@ -368,7 +409,7 @@ export default function Khudiram() {
                   <button
                     onClick={handleCommentSubmit}
                     disabled={!commentInput.trim()}
-                    className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm disabled:bg-gray-300"
+                    className="bg-blue-600  text-white px-4 py-1.5 rounded text-sm disabled:bg-gray-300"
                   >
                     Post
                   </button>

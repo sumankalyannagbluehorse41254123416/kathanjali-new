@@ -173,7 +173,7 @@ export default function Mahabharatapost() {
             onSubmit(replyText);
             setReplyText("");
           }}
-          className="bg-blue-600 text-white px-3 rounded-lg text-sm"
+          className="bg-blue-600  text-white px-3 rounded-lg text-sm"
         >
           Post
         </button>
@@ -246,7 +246,7 @@ export default function Mahabharatapost() {
                   <p className="text-xs text-gray-600 truncate">
                     Healthcare Innovation Leader • 1st
                   </p>
-                  <p className="text-xs text-gray-500 flex items-center">
+                  <p className="text-xs md:text-sm text-gray-500 flex items-center">
                     1/14/2025 • 4 min read
                   </p>
                 </div>
@@ -298,7 +298,7 @@ export default function Mahabharatapost() {
             </div>
 
             {/* ---------------- MAIN IMAGE ---------------- */}
-            <div className="mt-3 relative">
+            <div className="mt-0.5 relative">
               <Image
                 src="/images/mahabharata.jpeg"
                 alt="Harishchandra family illustration"
@@ -469,7 +469,7 @@ export default function Mahabharatapost() {
                       <h2 className="text-lg font-semibold">Send to...</h2>
                       <button
                         onClick={() => setShowSendPopup(false)}
-                        className="text-gray-500 hover:text-black text-xl"
+                        className="text-gray-600 hover:text-black text-2xl"
                       >
                         ×
                       </button>
@@ -482,7 +482,7 @@ export default function Mahabharatapost() {
                         <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
                         <div>
                           <p className="font-medium">John Doe</p>
-                          <p className="text-xs text-gray-500">Software Engineer</p>
+                          <p className="text-xs md:text-sm text-gray-500">Software Engineer</p>
                         </div>
                         <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
                       </div>
@@ -491,7 +491,7 @@ export default function Mahabharatapost() {
                         <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
                         <div>
                           <p className="font-medium">Sarah Parker</p>
-                          <p className="text-xs text-gray-500">Designer</p>
+                          <p className="text-xs md:text-sm text-gray-500">Designer</p>
                         </div>
                         <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
                       </div>
@@ -559,7 +559,7 @@ export default function Mahabharatapost() {
                       <button
                         onClick={handleCommentSubmit}
                         disabled={!commentInput.trim()}
-                        className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm disabled:bg-gray-300"
+                        className="bg-blue-600  text-white px-4 py-1.5 rounded text-sm disabled:bg-gray-300"
                       >
                         Post
                       </button>

@@ -58,7 +58,7 @@ export default function MobileProfileWrapper({
           {/* PROFILE BUTTON */}
           <button
             onClick={() => setIsDrawerOpen(true)}
-            className="px-3 py-1.5 text-base bg-blue-600 text-white rounded-md flex items-center gap-2 hover:bg-blue-700 transition"
+            className="px-3 py-1.5 text-base bg-blue-600  text-white rounded-md flex items-center gap-2 hover:bg-blue-700 transition"
           >
             <FaUser />
             Profile
@@ -84,7 +84,7 @@ export default function MobileProfileWrapper({
                 setIsPopupOpen(false);
                 setEmailPopupOpen(true);
               }}
-              className="w-full flex items-center gap-3 bg-blue-600 text-white py-2.5 rounded-lg justify-center hover:bg-blue-700 transition"
+              className="w-full flex items-center gap-3 bg-[#1e40af]  text-white py-2.5 rounded-lg justify-center hover:bg-blue-700 transition"
             >
               <FaEnvelope />
               Continue with Email
@@ -92,7 +92,7 @@ export default function MobileProfileWrapper({
 
             <button
               onClick={() => setIsPopupOpen(false)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
+              className="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl"
             >
               ×
             </button>
