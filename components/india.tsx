@@ -171,7 +171,7 @@ export default function India() {
             onSubmit(replyText);
             setReplyText("");
           }}
-          className="bg-blue-600 text-white px-3 rounded-lg text-sm"
+          className="bg-blue-600  text-white px-3 rounded-lg text-sm"
         >
           Post
         </button>
@@ -188,7 +188,7 @@ export default function India() {
         <Postheader />
 
         {/* IMAGE */}
-        <div className="mt-3 relative">
+        <div className="mt-0.5 relative">
           <a href="#">
             <img
               src="/images/india.jpeg"
@@ -211,7 +211,7 @@ export default function India() {
             href="/indiapost"
             className="text-[15px] text-blue-600 font-medium inline-flex items-center gap-1 group"
           >
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[1px] after:bg-blue-600 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-200">
+            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[1px] after:bg-blue-600  after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-200">
               Read More
             </span>
           </Link>
@@ -273,7 +273,7 @@ export default function India() {
                   <h2 className="text-lg font-semibold">Send to...</h2>
                   <button
                     onClick={() => setShowSendPopup(false)}
-                    className="text-gray-500 hover:text-black text-xl"
+                    className="text-gray-600 hover:text-black text-2xl"
                   >
                     ×
                   </button>
@@ -286,7 +286,7 @@ export default function India() {
                     <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
                     <div>
                       <p className="font-medium">John Doe</p>
-                      <p className="text-xs text-gray-500">Software Engineer</p>
+                      <p className="text-xs md:text-sm text-gray-500">Software Engineer</p>
                     </div>
                     <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
                   </div>
@@ -295,7 +295,7 @@ export default function India() {
                     <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
                     <div>
                       <p className="font-medium">Sarah Parker</p>
-                      <p className="text-xs text-gray-500">Designer</p>
+                      <p className="text-xs md:text-sm text-gray-500">Designer</p>
                     </div>
                     <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
                   </div>
@@ -363,7 +363,7 @@ export default function India() {
                   <button
                     onClick={handleCommentSubmit}
                     disabled={!commentInput.trim()}
-                    className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm disabled:bg-gray-300"
+                    className="bg-blue-600  text-white px-4 py-1.5 rounded text-sm disabled:bg-gray-300"
                   >
                     Post
                   </button>

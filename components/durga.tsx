@@ -4,11 +4,6 @@ import { useState } from "react";
 import {
   ThumbsUp,
   MessageCircle,
-  Send,
-  MoreHorizontal,
-  Bookmark,
-  Link2,
-  Code,
 } from "lucide-react";
 import Link from "next/link";
 import Postheader from "./Postheader";
@@ -40,7 +35,6 @@ export default function DUrga() {
   const [commentInput, setCommentInput] = useState("");
 
   const [comments, setComments] = useState<CommentType[]>([]);
-
 
   // Send popup state
   const [showSendPopup, setShowSendPopup] = useState(false);
@@ -78,12 +72,12 @@ export default function DUrga() {
       prev.map((comment) =>
         comment.id === commentId
           ? {
-            ...comment,
-            liked: !comment.liked,
-            likes: comment.liked
-              ? comment.likes - 1
-              : comment.likes + 1,
-          }
+              ...comment,
+              liked: !comment.liked,
+              likes: comment.liked
+                ? comment.likes - 1
+                : comment.likes + 1,
+            }
           : comment
       )
     );
@@ -103,25 +97,28 @@ export default function DUrga() {
 
   /* ================= ADD REPLY ================= */
 
-  const handleReplySubmit = (commentId: number, replyText: string) => {
+  const handleReplySubmit = (
+    commentId: number,
+    replyText: string
+  ) => {
     if (!replyText.trim()) return;
 
     setComments((prev) =>
       prev.map((comment) =>
         comment.id === commentId
           ? {
-            ...comment,
-            replies: [
-              ...comment.replies,
-              {
-                id: Date.now(),
-                text: replyText,
-                likes: 0,
-                liked: false,
-              },
-            ],
-            showReplyBox: false,
-          }
+              ...comment,
+              replies: [
+                ...comment.replies,
+                {
+                  id: Date.now(),
+                  text: replyText,
+                  likes: 0,
+                  liked: false,
+                },
+              ],
+              showReplyBox: false,
+            }
           : comment
       )
     );
@@ -129,24 +126,27 @@ export default function DUrga() {
 
   /* ================= REPLY LIKE ================= */
 
-  const handleReplyLike = (commentId: number, replyId: number) => {
+  const handleReplyLike = (
+    commentId: number,
+    replyId: number
+  ) => {
     setComments((prev) =>
       prev.map((comment) =>
         comment.id === commentId
           ? {
-            ...comment,
-            replies: comment.replies.map((reply) =>
-              reply.id === replyId
-                ? {
-                  ...reply,
-                  liked: !reply.liked,
-                  likes: reply.liked
-                    ? reply.likes - 1
-                    : reply.likes + 1,
-                }
-                : reply
-            ),
-          }
+              ...comment,
+              replies: comment.replies.map((reply) =>
+                reply.id === replyId
+                  ? {
+                      ...reply,
+                      liked: !reply.liked,
+                      likes: reply.liked
+                        ? reply.likes - 1
+                        : reply.likes + 1,
+                    }
+                  : reply
+              ),
+            }
           : comment
       )
     );
@@ -170,6 +170,7 @@ export default function DUrga() {
           placeholder="Write a reply..."
           className="flex-1 border border-gray-400 rounded-lg px-3 py-1 text-sm"
         />
+
         <button
           onClick={() => {
             onSubmit(replyText);
@@ -184,13 +185,13 @@ export default function DUrga() {
   };
 
   return (
-    <div className="w-full lg:max-w-2xl  mt-8">
+    <div className="w-full lg:max-w-2xl mt-8">
       <div className="bg-white rounded-lg shadow overflow-hidden">
         {/* HEADER */}
         <Postheader />
 
         {/* IMAGE */}
-        <div className="mt-3 relative">
+        <div className="mt-0.5 relative">
           <a href="#">
             <img
               src="/images/durga.jpeg"
@@ -203,14 +204,16 @@ export default function DUrga() {
         {/* CONTENT */}
         <div className="px-4 py-4">
           <p className="text-base text-gray-900 leading-relaxed mb-2">
-            Many ages after Rama’s lamps lit the path of hope, the world faced
-            darkness again - and this time, it was a woman who carried the
-            light.
+            Many ages after Rama’s lamps lit the path of hope,
+            the world faced darkness again - and this time, it
+            was a woman who carried the light.
           </p>
+
           <p className="text-base text-gray-900 leading-relaxed mb-2">
-            Her name was Satyabhama - queen, warrior, and the flame that even
-            gods revered
+            Her name was Satyabhama - queen, warrior, and the
+            flame that even gods revered
           </p>
+
           <Link
             href="/durgapost"
             className="text-[15px] text-blue-600 font-medium inline-flex items-center gap-1 group"
@@ -222,7 +225,6 @@ export default function DUrga() {
         </div>
 
         <div className="px-4">
-
           {/* STATS */}
           <div className="flex justify-between text-sm text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount} likes</div>
@@ -231,26 +233,34 @@ export default function DUrga() {
 
           {/* ACTION BUTTONS */}
           <div className="flex justify-between mt-2 mb-2.5">
-
             {/* LIKE */}
             <button
               onClick={handlePostLike}
               className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
             >
               <ThumbsUp
-                className={`w-[14px] h-[14px] lg:w-[18px] lg:h-[18px] ${liked ? "text-blue-600" : ""
-                  }`}
+                className={`w-[14px] h-[14px] lg:w-[18px] lg:h-[18px] ${
+                  liked ? "text-blue-600" : ""
+                }`}
               />
-              <span className="text-sm lg:text-base">Like</span>
+
+              <span className="text-sm lg:text-base">
+                Like
+              </span>
             </button>
 
             {/* COMMENT */}
             <button
-              onClick={() => setShowCommentBox(!showCommentBox)}
+              onClick={() =>
+                setShowCommentBox(!showCommentBox)
+              }
               className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
             >
               <MessageCircle className="w-[14px] h-[14px] lg:w-[18px] lg:h-[18px]" />
-              <span className="text-sm lg:text-base">Comment</span>
+
+              <span className="text-sm lg:text-base">
+                Comment
+              </span>
             </button>
 
             {/* SEND */}
@@ -259,75 +269,134 @@ export default function DUrga() {
               className="inline-flex items-center gap-2 hover:bg-gray-50 px-3 py-2 rounded-md transition"
             >
               <i className="fa-regular fa-paper-plane text-[14px] lg:text-[18px]"></i>
-              <span className="text-sm lg:text-base">Send</span>
-            </button>
 
+              <span className="text-sm lg:text-base">
+                Send
+              </span>
+            </button>
           </div>
 
-          {showSendPopup && (
-            <div className="fixed inset-0 flex justify-center items-center z-50">
-              <div className="bg-white w-96 rounded-lg shadow-lg p-4">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-lg font-semibold">Send to...</h2>
-                  <button
-                    onClick={() => setShowSendPopup(false)}
-                    className="text-gray-500 hover:text-black text-xl"
-                  >
-                    ×
+          {/* SEND POPUP */}
+          <div
+            className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 ${
+              showSendPopup
+                ? "opacity-100 visible"
+                : "opacity-0 invisible"
+            }`}
+          >
+            {/* BACKDROP */}
+            <div
+              onClick={() => setShowSendPopup(false)}
+              className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
+                showSendPopup
+                  ? "opacity-100"
+                  : "opacity-0"
+              }`}
+            />
+
+            {/* POPUP */}
+            <div
+              className={`relative bg-white w-96 rounded-lg shadow-lg p-4 transform transition-all duration-300 ease-out ${
+                showSendPopup
+                  ? "scale-100 opacity-100 translate-y-0"
+                  : "scale-95 opacity-0 translate-y-4"
+              }`}
+            >
+              <div className="flex justify-between items-center">
+                <h2 className="text-lg font-semibold">
+                  Send to...
+                </h2>
+
+                <button
+                  onClick={() =>
+                    setShowSendPopup(false)
+                  }
+                  className="text-gray-600 hover:text-black text-2xl"
+                >
+                  ×
+                </button>
+              </div>
+
+              <input
+                type="text"
+                placeholder="Search people"
+                className="border w-full p-2 rounded mt-3"
+              />
+
+              <div className="mt-4 space-y-3">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/images/vineet.jpg"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full"
+                    alt=""
+                  />
+
+                  <div>
+                    <p className="font-medium">
+                      John Doe
+                    </p>
+
+                    <p className="text-xs md:text-sm text-gray-500">
+                      Software Engineer
+                    </p>
+                  </div>
+
+                  <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">
+                    Send
                   </button>
                 </div>
 
-                <input type="text" placeholder="Search people" className="border w-full p-2 rounded mt-3" />
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/images/vineet.jpg"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full"
+                    alt=""
+                  />
 
-                <div className="mt-4 space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
-                    <div>
-                      <p className="font-medium">John Doe</p>
-                      <p className="text-xs text-gray-500">Software Engineer</p>
-                    </div>
-                    <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
+                  <div>
+                    <p className="font-medium">
+                      Sarah Parker
+                    </p>
+
+                    <p className="text-xs md:text-sm text-gray-500">
+                      Designer
+                    </p>
                   </div>
 
-                  <div className="flex items-center gap-3">
-                    <Image src="/images/vineet.jpg" width={40} height={40} className="w-10 h-10 rounded-full" alt="" />
-                    <div>
-                      <p className="font-medium">Sarah Parker</p>
-                      <p className="text-xs text-gray-500">Designer</p>
-                    </div>
-                    <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">Send</button>
-                  </div>
+                  <button className="ml-auto px-3 py-1 text-sm border rounded hover:bg-gray-100">
+                    Send
+                  </button>
                 </div>
+              </div>
 
-                {/* SOCIAL SHARE ICONS */}
-                <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
+              {/* SOCIAL SHARE ICONS */}
+              <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-solid fa-link text-xl"></i>
+                </a>
 
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-solid fa-link text-xl"></i>
-                  </a>
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-brands fa-instagram text-xl"></i>
+                </a>
 
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-instagram text-xl"></i>
-                  </a>
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-brands fa-linkedin text-xl"></i>
+                </a>
 
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-linkedin text-xl"></i>
-                  </a>
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-brands fa-x-twitter text-xl"></i>
+                </a>
 
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-x-twitter text-xl"></i>
-                  </a>
-
-                  <a href="#" className="hover:opacity-75">
-                    <i className="fa-brands fa-facebook text-xl"></i>
-                  </a>
-
-                </div>
-
-
+                <a href="#" className="hover:opacity-75">
+                  <i className="fa-brands fa-facebook text-xl"></i>
+                </a>
               </div>
             </div>
-          )}
+          </div>
 
           {/* COMMENT INPUT */}
           {showCommentBox && (
@@ -337,14 +406,18 @@ export default function DUrga() {
                 className="w-9 h-9 rounded-full"
                 alt="you"
               />
+
               <div className="flex-1">
                 <textarea
                   rows={2}
                   value={commentInput}
-                  onChange={(e) => setCommentInput(e.target.value)}
+                  onChange={(e) =>
+                    setCommentInput(e.target.value)
+                  }
                   placeholder="Write a comment..."
                   className="w-full p-2 border rounded-lg text-sm resize-none"
                 />
+
                 <div className="flex justify-end gap-2 mt-2 mb-3">
                   {/* Cancel Button */}
                   <button
@@ -371,10 +444,9 @@ export default function DUrga() {
           )}
 
           {/* COMMENTS LIST */}
-          <div className="">
+          <div>
             {comments.map((comment) => (
               <div key={comment.id} className="flex gap-3">
-
                 <img
                   src="/images/vineet.jpg"
                   className="w-9 h-9 rounded-full"
@@ -382,21 +454,28 @@ export default function DUrga() {
                 />
 
                 <div className="flex-1">
-
                   <div className="bg-gray-100 p-3 rounded-lg text-sm">
                     {comment.text}
                   </div>
 
                   <div className="flex items-center gap-4 text-xs mt-2 text-gray-600 mb-3">
                     <button
-                      onClick={() => handleCommentLike(comment.id)}
-                      className={comment.liked ? "text-blue-600 font-medium" : ""}
+                      onClick={() =>
+                        handleCommentLike(comment.id)
+                      }
+                      className={
+                        comment.liked
+                          ? "text-blue-600 font-medium"
+                          : ""
+                      }
                     >
                       Like ({comment.likes})
                     </button>
 
                     <button
-                      onClick={() => toggleReplyBox(comment.id)}
+                      onClick={() =>
+                        toggleReplyBox(comment.id)
+                      }
                     >
                       Reply
                     </button>
@@ -405,7 +484,10 @@ export default function DUrga() {
                   {comment.showReplyBox && (
                     <ReplyBox
                       onSubmit={(text) =>
-                        handleReplySubmit(comment.id, text)
+                        handleReplySubmit(
+                          comment.id,
+                          text
+                        )
                       }
                     />
                   )}
@@ -429,30 +511,37 @@ export default function DUrga() {
 
                         <div className="flex items-center gap-4 text-xs mt-2 text-gray-600 mb-3">
                           <button
-                            onClick={() => handleCommentLike(comment.id)}
-                            className={comment.liked ? "text-blue-600 font-medium" : ""}
+                            onClick={() =>
+                              handleReplyLike(
+                                comment.id,
+                                reply.id
+                              )
+                            }
+                            className={
+                              reply.liked
+                                ? "text-blue-600 font-medium"
+                                : ""
+                            }
                           >
-                            Like ({comment.likes})
+                            Like ({reply.likes})
                           </button>
 
                           <button
-                            onClick={() => toggleReplyBox(comment.id)}
+                            onClick={() =>
+                              toggleReplyBox(comment.id)
+                            }
                           >
                             Reply
                           </button>
                         </div>
                       </div>
-
                     </div>
                   ))}
-
                 </div>
               </div>
             ))}
           </div>
-
         </div>
-
       </div>
     </div>
   );

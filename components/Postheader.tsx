@@ -57,10 +57,10 @@ export default function PostHeader({
         <h3 className="text-[16px] font-semibold text-gray-900">
           {userName}
         </h3>
-        <p className="text-xs text-gray-500">
+        <p className="text-xs md:text-sm text-gray-500">
           {userRole}
         </p>
-        <p className="text-xs text-gray-500">{date} • {readTime}</p>
+        <p className="text-xs md:text-sm text-gray-500">{date} • {readTime}</p>
       </div>
 
       {/* Menu Button */}

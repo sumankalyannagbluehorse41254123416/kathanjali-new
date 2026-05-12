@@ -86,7 +86,7 @@ export default function EmailPopup({ open, setOpen, onLoginSuccess }: EmailPopup
 
         {/* FOOTER */}
         {!isLogin && (
-          <p className="text-xs text-gray-500 text-center mt-6">
+          <p className="text-xs md:text-sm text-gray-500 text-center mt-6">
             By clicking “Create account”, you accept our Terms of Service and Privacy Policy.
           </p>
         )}
