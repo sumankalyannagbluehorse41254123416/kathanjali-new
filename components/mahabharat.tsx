@@ -171,7 +171,7 @@ export default function Mahabharat() {
           value={replyText}
           onChange={(e) => setReplyText(e.target.value)}
           placeholder="Write a reply..."
-          className="flex-1 border rounded-lg px-3 py-1 text-sm"
+          className="flex-1 border border-gray-400 rounded-lg px-3 py-1 text-sm"
         />
         <button
           onClick={() => {
@@ -195,7 +195,7 @@ export default function Mahabharat() {
           <a href="#">
             <img
               src="/images/mahabharata.jpeg"
-              className="w-full rounded-lg object-cover h-auto p-4"
+              className="w-full rounded-lg object-cover h-auto p-4 pb-0"
               alt="Harishchandra family illustration"
             />
           </a>
@@ -203,7 +203,7 @@ export default function Mahabharat() {
 
         {/* CONTENT */}
         <div className="p-4">
-          <p className="text-base text-gray-900 leading-relaxed  mb-4 mt-4">
+          <p className="text-base text-gray-900 leading-relaxed  mb-4 mt-2">
             Long ago, in a small village, famine had turned the earth into
             cracked clay and the air into dust. Wells lay dry, and the sound of
             cooking had vanished from homes
@@ -223,7 +223,7 @@ export default function Mahabharat() {
         <div className="px-4">
 
           {/* STATS */}
-          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
+          <div className="flex justify-between text-sm text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount} likes</div>
             <div>{comments.length} comments</div>
           </div>
@@ -303,7 +303,7 @@ export default function Mahabharat() {
                 </div>
 
                 {/* SOCIAL SHARE ICONS */}
-                <div className="flex items-center justify-center gap-6 border-t pt-4 pb-2 text-gray-700 mt-7">
+                <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
 
                   <a href="#" className="hover:opacity-75">
                     <i className="fa-solid fa-link text-xl"></i>

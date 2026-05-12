@@ -172,7 +172,7 @@ export default function Thebenchpost() {
           value={replyText}
           onChange={(e) => setReplyText(e.target.value)}
           placeholder="Write a reply..."
-          className="flex-1 border rounded-lg px-3 py-1 text-sm"
+          className="flex-1 border border-gray-400 rounded-lg px-3 py-1 text-sm"
         />
         <button
           onClick={() => {
@@ -198,7 +198,7 @@ export default function Thebenchpost() {
           <a href="#">
             <img
               src="/images/bench.jpeg"
-              className="w-full rounded-lg object-cover h-auto p-4"
+              className="w-full rounded-lg object-cover h-auto p-4 pb-0"
               alt="Harishchandra family illustration"
             />
           </a>
@@ -206,7 +206,7 @@ export default function Thebenchpost() {
 
         {/* CONTENT */}
         <div className="p-4">
-          <p className="text-base text-gray-900 leading-relaxed  mb-4 mt-4">
+          <p className="text-base text-gray-900 leading-relaxed  mb-4 mt-2">
             Haven’t read Part 1 yet? Check out The Bench by the Lake (John’s
             Story) - Part 1 to see how it all began — and to truly understand
             both sides of the story{" "}
@@ -225,7 +225,7 @@ export default function Thebenchpost() {
         <div className="px-4">
 
           {/* STATS */}
-          <div className="flex justify-between text-xs text-gray-600 pb-3 border-b border-gray-200">
+          <div className="flex justify-between text-sm text-gray-600 pb-3 border-b border-gray-200">
             <div>{likeCount} likes</div>
             <div>{comments.length} comments</div>
           </div>
@@ -305,7 +305,7 @@ export default function Thebenchpost() {
                 </div>
 
                 {/* SOCIAL SHARE ICONS */}
-                <div className="flex items-center justify-center gap-6 border-t pt-4 pb-2 text-gray-700 mt-7">
+                <div className="flex items-center justify-between gap-6 border-t pt-4 pb-2 text-gray-700 mt-7 px-2">
 
                   <a href="#" className="hover:opacity-75">
                     <i className="fa-solid fa-link text-xl"></i>
