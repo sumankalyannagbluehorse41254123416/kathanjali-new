@@ -24,9 +24,9 @@ export default function ContactCard() {
         </div>
 
         {/* Address */}
-        <div className="flex items-start mb-6">
+        <div className="flex items-start mb-0">
           <svg
-            className="w-5 h-5 text-gray-800 mr-3 mt-0.5 flex-shrink-0"
+            className="w-4.5 h-4.5 text-gray-800 mr-2 mt-0.5 flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ export default function ContactCard() {
             rel="noopener noreferrer"
             className="text-gray-700 hover:underline"
           >
-            2nd floor (Zest Express), B8 72101 Aurabinda Nagar, Midnapore - 721101
+            2nd floor (Zbrdst Express), B8 72101 Aurabinda Nagar, Midnapore - 721101
           </a>
         </div>
       </div>
