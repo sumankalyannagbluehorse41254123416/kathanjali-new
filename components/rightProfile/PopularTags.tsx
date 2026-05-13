@@ -8,7 +8,7 @@ export default function PopularTags() {
         Popular Tags
       </h3>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-3">
         <span className="border border-gray-400 hover:bg-blue-600  hover:text-white text-black-500 text-sm font-medium px-3 py-1 rounded-full transition-all duration-200 ease-in-out">
           Digital Health
         </span>
