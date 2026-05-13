@@ -68,29 +68,31 @@ export default function PostHeader({
         <button
           ref={menuButtonRef}
           onClick={() => setShowMenu(!showMenu)}
-          className="p-1 rounded hover:bg-gray-100"
+          className="p-1 rounded hover:bg-gray-100 transition-all duration-200 ease-in-out"
         >
           <MoreHorizontal className="text-gray-700" />
         </button>
-        {showMenu && (
-          <div 
-            ref={menuRef}
-            className="absolute top-8 right-0 bg-white w-52 shadow-lg border border-gray-200 rounded-lg p-2 z-50"
-          >
-            <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
-              <Bookmark />
-              Save
-            </div>
-            <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
-              <Link2 />
-              Copy link to post
-            </div>
-            <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
-              <Code />
-              Embed this post
-            </div>
+        <div
+          ref={menuRef}
+          className={`absolute top-8 right-0 bg-white w-52 shadow-lg border border-gray-200 rounded-lg p-2 z-50 origin-top-right transition-all duration-200 ease-out ${showMenu
+            ? "opacity-100 scale-100 translate-y-0 visible"
+            : "opacity-0 scale-95 -translate-y-2 invisible"
+            }`}
+        >
+          <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
+            <Bookmark />
+            Save
           </div>
-        )}
+          <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
+            <Link2 />
+            Copy link to post
+          </div>
+          <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
+            <Code />
+            Embed this post
+          </div>
+        </div>
+
       </div>
     </div>
   );

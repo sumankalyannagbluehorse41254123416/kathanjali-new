@@ -273,24 +273,24 @@ export default function durgaPost() {
                   </button>
 
                   {/* MENU BOX */}
-                  <div
-                    ref={menuRef}
-                    className={`absolute top-8 right-0 bg-white w-52 shadow-lg border border-gray-200 rounded-lg p-2 z-50 ${openMenu ? "block" : "hidden"
-                      }`}
-                  >
-                    <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
-                      <i className="fa-regular fa-bookmark"></i>
-                      Save
+                    <div
+                      ref={menuRef}
+                      className={`absolute top-8 right-0 bg-white w-52 shadow-lg border border-gray-200 rounded-lg p-2 z-50 ${openMenu ? "block" : "hidden"
+                        }`}
+                    >
+                      <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
+                        <i className="fa-regular fa-bookmark"></i>
+                        Save
+                      </div>
+                      <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
+                        <i className="fa-solid fa-link"></i>
+                        Copy link to post
+                      </div>
+                      <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
+                        <i className="fa-solid fa-code"></i>
+                        Embed this post
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
-                      <i className="fa-solid fa-link"></i>
-                      Copy link to post
-                    </div>
-                    <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
-                      <i className="fa-solid fa-code"></i>
-                      Embed this post
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
